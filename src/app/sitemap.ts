@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://plook.co";
+export const dynamic = "force-static";
+
+const BASE_URL = "https://plook.ag";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
