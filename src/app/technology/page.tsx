@@ -151,9 +151,9 @@ function Hero() {
           <span className="inline-block self-start roca-headline text-xs tracking-widest uppercase px-3 py-1 rounded-full border border-plook-blue/25 text-plook-blue">
             PLOOK Technology
           </span>
-          <h1 className="roca-headline text-plook-forest text-4xl md:text-5xl lg:text-6xl leading-tight">
+          <div className="roca-headline text-plook-forest text-4xl md:text-5xl lg:text-6xl leading-tight">
             Code the Future<br />of Farming.
-          </h1>
+          </div>
           <p className="roca-body text-plook-forest/55 text-lg leading-relaxed max-w-md">
             AI-powered farming infrastructure. From yield optimization to operational workflows
             that enable reliable and scalable food supply.

@@ -176,7 +176,7 @@ function ProduceSection({ produce }: { produce: typeof PRODUCE[number] }) {
 function Hero({ onOrder }: { onOrder: () => void }) {
   return (
     <section className="pt-[104px] pb-20 px-8 md:px-16 bg-plook-blue text-center">
-      <h1 className="roca-headline text-plook-cream text-5xl md:text-6xl mb-5">Our Produce</h1>
+      <div className="roca-headline text-plook-cream text-5xl md:text-6xl mb-5">Our Produce</div>
       <p className="roca-subhead text-white/70 text-lg md:text-xl max-w-lg mx-auto leading-relaxed mb-8">
         Four crops. Four regions. One guarantee: monitored, contracted, and delivered with data, not guesswork.
       </p>

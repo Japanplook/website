@@ -11,7 +11,7 @@ export default function Footer() {
             alt="PLOOK"
             width={100}
             height={44}
-            className="h-9 w-auto mb-3"
+            className="h-22 w-auto mb-3"
           />
           <p className="roca-body text-white/50 text-xs leading-relaxed">
             PLOOK VENTURES Company Limited · Thailand

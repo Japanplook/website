@@ -8,10 +8,10 @@ function Hero() {
   return (
     <section className="pt-[104px] min-h-[80vh] flex flex-col md:flex-row items-center overflow-hidden bg-plook-blue">
       <div className="flex-1 px-8 md:px-16 py-12 flex flex-col gap-6">
-        <h1 className="roca-headline text-plook-cream text-4xl md:text-5xl lg:text-6xl leading-tight max-w-xl">
+        <div className="roca-headline text-plook-cream text-4xl md:text-5xl lg:text-6xl leading-tight max-w-xl2">
           We Embed. We Monitor.<br />We Contract. We Deliver.
-        </h1>
-        <p className="roca-body text-white/75 text-base leading-relaxed max-w-md">
+        </div>
+        <p className="roca-body text-white/75 text-xl leading-relaxed max-w-xl">
           Strengthening Asia&apos;s food security by transforming local farms into regional-standard food suppliers.
         </p>
       </div>

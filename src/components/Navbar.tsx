@@ -30,7 +30,7 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
         <nav
-          className={`flex items-center justify-between px-8 py-4 transition-all duration-300 ${
+          className={`flex items-center justify-between px-8 py-1 transition-all duration-300 ${
             scrolled || pathname === "/technology" ? "bg-plook-blue shadow-sm" : "bg-transparent"
           }`}
         >
@@ -40,7 +40,7 @@ export default function Navbar() {
               alt="PLOOK"
               width={100}
               height={44}
-              className="h-9 w-auto"
+              className="h-22 w-auto"
               priority
             />
           </Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`roca-body text-sm transition-colors hover:text-white ${
+                    className={`roca-body text-lg transition-colors hover:text-white ${
                       active
                         ? "text-plook-cream border-b border-white/60 pb-0.5"
                         : "text-white/85"

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-
 /* ─── Hero — full-viewport, cinematic ───────────────────────── */
 function Hero() {
   return (
@@ -21,18 +20,31 @@ function Hero() {
 
       {/* Content — bottom-left, Bowery style */}
       <div className="relative z-10 px-8 md:px-16 pb-20 md:pb-24 max-w-4xl">
-        <p className="roca-body text-plook-cream/60 text-xs tracking-[0.25em] uppercase mb-4">
+        <div className=" text-white text-md font-normal tracking-[0.25em] uppercase mb-4">
           AI farming system for a reliable food supply
-        </p>
-        <h1 className="roca-headline not-italic text-plook-cream text-5xl md:text-7xl lg:text-8xl leading-none mb-8" style={{ fontStyle: "normal" }}>
+        </div>
+        <div
+          className="roca-headline not-italic text-plook-cream text-5xl md:text-7xl lg:text-8xl leading-none mb-8"
+          style={{ fontStyle: "normal" }}
+        >
           Fresh &amp; quality produce you can trust.
-        </h1>
+        </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <svg className="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+        <svg
+          className="w-6 h-6 text-white/50"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </div>
     </section>
@@ -44,7 +56,8 @@ function BrandStatement() {
   return (
     <section className="bg-plook-cream py-24 px-8 md:px-16 text-center">
       <p className="roca-subhead text-plook-forest text-2xl md:text-4xl lg:text-5xl leading-snug max-w-3xl mx-auto">
-        Our AI farming system transforms unreliable supply into predictable quality buyers can trust.
+        Our AI farming system transforms unreliable supply into predictable
+        quality buyers can trust.
       </p>
     </section>
   );
@@ -53,10 +66,34 @@ function BrandStatement() {
 /* ─── Mission + How We Work — merged section ─────────────────── */
 function Mission() {
   const steps = [
-    { id: "01", label: "EMBED",    desc: "We partner with selected farms to deploy our technology that improves yield quality control",  dotBg: "bg-plook-kiwi",  labelColor: "text-plook-kiwi"  },
-    { id: "02", label: "MONITOR",  desc: "We monitor yield performance and help farms make better decisions to improve yield predictability and outcomes.",               dotBg: "bg-plook-blue",  labelColor: "text-plook-blue"  },
-    { id: "03", label: "CONTRACT", desc: "We contract-purchase farm production with market demand. No market risk for the farmer.", dotBg: "bg-plook-green", labelColor: "text-plook-green" },
-    { id: "04", label: "DELIVER",  desc: "We coordinate delivery operations to ensure reliable fulfillment of the right products, quality, and timing.",        dotBg: "bg-plook-cream", labelColor: "text-plook-cream" },
+    {
+      id: "01",
+      label: "EMBED",
+      desc: "We partner with selected farms to deploy our technology that improves yield quality control",
+      dotBg: "bg-plook-kiwi",
+      labelColor: "text-plook-kiwi",
+    },
+    {
+      id: "02",
+      label: "MONITOR",
+      desc: "We monitor yield performance and help farms make better decisions to improve yield predictability and outcomes.",
+      dotBg: "bg-plook-blue",
+      labelColor: "text-plook-blue",
+    },
+    {
+      id: "03",
+      label: "CONTRACT",
+      desc: "We contract-purchase farm production with market demand. No market risk for the farmer.",
+      dotBg: "bg-plook-green",
+      labelColor: "text-plook-green",
+    },
+    {
+      id: "04",
+      label: "DELIVER",
+      desc: "We coordinate delivery operations to ensure reliable fulfillment of the right products, quality, and timing.",
+      dotBg: "bg-plook-cream",
+      labelColor: "text-plook-cream",
+    },
   ];
 
   return (
@@ -64,17 +101,27 @@ function Mission() {
       {/* Top: mission split */}
       <div className="px-8 md:px-16 py-16 flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1 flex flex-col gap-6">
-          <h2 className="roca-headline text-plook-cream text-3xl md:text-4xl leading-snug">
-            We embed. We monitor.<br />We contract. We deliver.
-          </h2>
+          <div className="roca-headline text-plook-cream text-3xl md:text-4xl leading-snug">
+            We embed. We monitor.
+            <br />
+            We contract. We deliver.
+          </div>
           <div className="grid grid-cols-2 gap-x-8 gap-y-8">
             {steps.map((s) => (
               <div key={s.id} className="flex flex-col gap-3">
-                <span className={`${s.dotBg} w-14 h-14 rounded-full flex items-center justify-center roca-headline text-plook-forest text-base`}>
+                <span
+                  className={`${s.dotBg} w-14 h-14 rounded-full flex items-center justify-center roca-headline text-plook-forest text-base`}
+                >
                   {s.id}
                 </span>
-                <p className={`${s.labelColor} roca-headline text-lg tracking-widest`}>{s.label}</p>
-                <p className="roca-body text-white/55 text-sm leading-relaxed">{s.desc}</p>
+                <p
+                  className={`${s.labelColor} roca-headline text-lg tracking-widest`}
+                >
+                  {s.label}
+                </p>
+                <p className="roca-body text-white/55 text-sm leading-relaxed">
+                  {s.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -101,10 +148,30 @@ function Mission() {
 
 /* ─── Products — Bowery-style editorial cards ────────────────── */
 const PRODUCTS = [
-  { name: "Vanilla",  category: "Highland Orchid",  img: "/assets/vanilla.jpg",  href: "/our-produce#vanilla"  },
-  { name: "Avocado",  category: "Hass Variety",     img: "/assets/avocado.jpg",  href: "/our-produce#avocado"  },
-  { name: "Mango",    category: "Nam Dok Mai",      img: "/assets/mango.jpg",    href: "/our-produce#mango"    },
-  { name: "Coconut",  category: "Young Coconut",    img: "/assets/coconut.jpg",  href: "/our-produce#coconut"  },
+  {
+    name: "Vanilla",
+    category: "Highland Orchid",
+    img: "/assets/vanilla.jpg",
+    href: "/our-produce#vanilla",
+  },
+  {
+    name: "Avocado",
+    category: "Hass Variety",
+    img: "/assets/avocado.jpg",
+    href: "/our-produce#avocado",
+  },
+  {
+    name: "Mango",
+    category: "Nam Dok Mai",
+    img: "/assets/mango.jpg",
+    href: "/our-produce#mango",
+  },
+  {
+    name: "Coconut",
+    category: "Young Coconut",
+    img: "/assets/coconut.jpg",
+    href: "/our-produce#coconut",
+  },
 ];
 
 function Products() {
@@ -125,7 +192,11 @@ function Products() {
       {/* Bowery-style 4-col card grid — no rounded corners on image, flush */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-plook-forest/10">
         {PRODUCTS.map((p) => (
-          <a key={p.name} href={p.href} className="group bg-plook-cream flex flex-col overflow-hidden">
+          <a
+            key={p.name}
+            href={p.href}
+            className="group bg-plook-cream flex flex-col overflow-hidden"
+          >
             <div className="relative h-56 md:h-72 overflow-hidden">
               <Image
                 src={p.img}
@@ -137,12 +208,24 @@ function Products() {
             </div>
             <div className="flex items-start justify-between p-4 pt-3">
               <div>
-                <p className="roca-body text-plook-forest/50 text-xs tracking-widest uppercase mb-0.5">{p.category}</p>
-                <p className="roca-headline text-plook-forest text-lg">{p.name}</p>
+                <p className="roca-body text-plook-forest/50 text-xs tracking-widest uppercase mb-0.5">
+                  {p.category}
+                </p>
+                <p className="roca-headline text-plook-forest text-lg">
+                  {p.name}
+                </p>
               </div>
               <span className="w-8 h-8 rounded-full bg-plook-blue flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-plook-forest transition-colors">
-                <svg className="w-3.5 h-3.5 text-white fill-none stroke-current" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-3.5 h-3.5 text-white fill-none stroke-current"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </span>
             </div>
@@ -151,15 +234,16 @@ function Products() {
       </div>
 
       <div className="flex justify-center mt-8 md:hidden">
-        <a href="/our-produce" className="roca-cta text-sm px-7 py-2.5 rounded-full bg-plook-blue text-plook-cream hover:opacity-90 transition-opacity">
+        <a
+          href="/our-produce"
+          className="roca-cta text-sm px-7 py-2.5 rounded-full bg-plook-blue text-plook-cream hover:opacity-90 transition-opacity"
+        >
           All Produce →
         </a>
       </div>
     </section>
   );
 }
-
-
 
 /* ─── Technology banner ──────────────────────────────────────── */
 function OS() {
@@ -198,12 +282,20 @@ function OS() {
 /* ─── Contact ────────────────────────────────────────────────── */
 function Contact() {
   return (
-    <section id="contact" className="bg-plook-forest py-24 px-8 md:px-16 text-center">
-      <h2 className="roca-headline text-plook-cream text-4xl md:text-5xl mb-3">Contact us</h2>
-      <p className="roca-body text-white/60 text-sm mb-10 max-w-sm mx-auto leading-relaxed">
-        Whether you&apos;re a buyer, a farmer, or a partner — we&apos;d love to hear from you.
-      </p>
-      <a href="mailto:info@plook.ag" className="roca-body text-white/40 text-sm underline underline-offset-4 hover:text-white/70 transition-colors">info@plook.ag</a>
+    <section
+      id="contact"
+      className="bg-plook-forest py-24 px-8 md:px-16 text-center"
+    >
+      <div className="roca-headline text-plook-cream text-4xl md:text-5xl mb-3">
+        Contact us
+      </div>
+
+      <a
+        href="mailto:info@plook.ag"
+        className="roca-body text-white/40 text-sm underline underline-offset-4 hover:text-white/70 transition-colors"
+      >
+        info@plook.ag
+      </a>
     </section>
   );
 }
