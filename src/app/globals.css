@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
+/* ─── Brand colour tokens ─────────────────────────────────────── */
+@theme {
+  --color-plook-blue:      #1d62db;
+  --color-plook-cream:     #fff9dc;
+  --color-plook-forest:    #00331e;
+  --color-plook-saltwater: #c5e7ed;
+  --color-plook-kiwi:      #aaba13;
+  --color-plook-green:     #2da947;
+  --color-plook-yellow:    #ffda00;
+  --color-plook-purple:    #bca5ed;
+}
+
+/* ─── Roca Font Faces ─────────────────────────────────────────── */
+@font-face {
+  font-family: "Roca";
+  src: url("/assets/fonts/fonnts.com-Roca-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roca";
+  src: url("/assets/fonts/fonnts.com-Roca-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roca";
+  src: url("/assets/fonts/fonnts.com-Roca-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roca";
+  src: url("/assets/fonts/fonnts.com-Roca-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roca";
+  src: url("/assets/fonts/fonnts.com-Roca-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roca";
+  src: url("/assets/fonts/fonnts.com-Roca-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Base ────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff9dc;
+  --foreground: #00331e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roca", sans-serif;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Typography Utilities ────────────────────────────────────── */
+.roca-headline {
+  font-family: "Roca", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roca-subhead {
+  font-family: "Roca", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roca-body {
+  font-family: "Roca", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roca-cta {
+  font-family: "Roca", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ─── Ticker animation ────────────────────────────────────────── */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker 28s linear infinite;
+  will-change: transform;
+}
+.animate-ticker:hover {
+  animation-play-state: paused;
 }
