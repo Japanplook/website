@@ -12,14 +12,8 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 RUN yarn build
 
-FROM node:22-alpine AS runner
-WORKDIR /app
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
-RUN apk add --no-cache libc6-compat
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/package.json ./package.json
-COPY --from=deps /app/node_modules ./node_modules
-EXPOSE 3000
-CMD ["sh", "-c", "yarn start -H 0.0.0.0 -p ${PORT:-3000}"]
+FROM nginx:alpine AS runner
+COPY --from=builder /app/out /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
