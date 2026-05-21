@@ -205,7 +205,7 @@ function ProduceSection({ produce }: { produce: Produce }) {
 
   return (
     <section className={`py-20 px-8 md:px-16 ${bgClass}`}>
-      <div className={`max-w-6xl mx-auto flex flex-col gap-12 items-center ${imageLeft ? "md:flex-row" : "md:flex-row-reverse"}`}>
+      <div className={`flex flex-col gap-12 items-center ${imageLeft ? "md:flex-row" : "md:flex-row-reverse"}`}>
         {image}
         {text}
       </div>
